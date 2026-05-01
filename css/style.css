@@ -255,7 +255,7 @@ a {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background: url("https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=1800&q=85")
+  background: url("https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1800")
     center center / cover no-repeat;
 }
 
@@ -401,7 +401,7 @@ a {
 /*** Facts ***/
 .facts {
   background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.92)),
-    url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80")
+    url("https://images.pexels.com/photos/31945552/pexels-photo-31945552.jpeg?auto=compress&cs=tinysrgb&w=1600")
       center center / cover no-repeat;
 }
 
@@ -519,7 +519,7 @@ a {
 /*** Why ***/
 .why-section {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.88)),
-    url("https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=1600&q=80")
+    url("https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1600")
       center center / cover no-repeat;
 }
 
