@@ -16,7 +16,7 @@ if ($urls2 == 'index.html') {
 
    if (1 == 1) {
 
-      $to = "info@pitechware.com";
+      $to = "info@ramavathinfratech.com";
       $subject = "This is Query Form of $name2 ";
 
       $message = "<h1>Details of the User <b> $name2 </b></h1>";
@@ -30,7 +30,7 @@ if ($urls2 == 'index.html') {
       $message .= "<h5>Subject   : $subject2</h5>";
       $message .= "<h5>Message   : $message2</h5>";
 
-      $header = "From:info@pitechware.com \r\n";
+      $header = "From:info@ramavathinfratech.com \r\n";
 
       $header .= "MIME-Version: 1.0\r\n";
       $header .= "Content-type: text/html\r\n";
@@ -54,7 +54,7 @@ if ($urls2 == 'index.html') {
 
    if (1 == 1) {
 
-      $to = "info@pitechware.com";
+      $to = "info@ramavathinfratech.com";
       $subject = "This is Callback Form of $name2 ";
 
       $message = "<h1>Call back Details of the User <b> $name2 </b></h1>";
@@ -68,7 +68,7 @@ if ($urls2 == 'index.html') {
       $message .= "<h5>Subject   : $subject2</h5>";
       $message .= "<h5>Message   : $message2</h5>";
 
-      $header = "From:info@pitechware.com \r\n";
+      $header = "From:info@ramavathinfratech.com \r\n";
 
       $header .= "MIME-Version: 1.0\r\n";
       $header .= "Content-type: text/html\r\n";
