@@ -147,3 +147,289 @@
     },
   });
 })(jQuery);
+
+// File Upload Validation
+
+const projectFile =
+    document.getElementById("projectFile");
+
+const fileError =
+    document.getElementById("fileError");
+
+if (projectFile) {
+
+    projectFile.addEventListener("change", function () {
+
+        fileError.style.display = "none";
+        fileError.textContent = "";
+
+        const file = this.files[0];
+
+        if (!file) return;
+
+        // Max Size = 5 MB
+        const maxSize = 5 * 1024 * 1024;
+
+        // Allowed Types
+        const allowedTypes = [
+            "application/pdf",
+
+            "application/vnd.ms-excel",
+
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ];
+
+        // Validate Type
+        if (!allowedTypes.includes(file.type)) {
+
+            fileError.style.display = "block";
+
+            fileError.textContent =
+                "Only PDF and Excel files are allowed.";
+
+            this.value = "";
+
+            return;
+        }
+
+        // Validate Size
+        if (file.size > maxSize) {
+
+            fileError.style.display = "block";
+
+            fileError.textContent =
+                "File size must be under 5 MB.";
+
+            this.value = "";
+
+            return;
+        }
+    });
+}
+
+
+// Interactive Services
+
+const servicesData = {
+
+    civil: {
+
+        title: "Civil & Building Construction",
+
+        description:
+            "Professional civil construction services for residential, commercial and infrastructure projects with quality-focused execution.",
+
+        video:
+            "./data/services/construction.mp4",
+
+        points: [
+              "Residential Building Construction",
+              "Commercial Building Construction",
+              "Industrial Civil Works",
+              "Turnkey Civil Projects",
+              "Foundation & Structural Works"
+        ]
+    },
+
+    earthwork: {
+
+        title: "Earthwork & Excavation Solutions",
+
+        description:
+            "Reliable excavation and grading services with proper site coordination and heavy equipment support.",
+
+        video:
+            "./data/services/excavator.mp4",
+
+        points: [
+            "Site excavation",
+            "Trenching & Backfilling",
+            "Land Development Earthwork",
+            "Cutting & Filling Works",
+            "Excavator / JCB Services"
+        ]
+    },
+
+    road: {
+
+        title: "Road & Infrastructure Projects",
+
+        description:
+            "Road construction and infrastructure execution solutions for industrial and public projects.",
+
+        video:
+            "./data/services/road.mp4",
+
+        points: [
+            "Internal Roads & Layout Roads",
+            "Road Construction",
+            "Culvert Works",
+            "Infrastructure Development Projects",
+            "Government & Private Contract Works"
+        ]
+    },
+
+    demolition: {
+
+        title: "Demolition & Site Development",
+
+        description:
+            "Controlled demolition and debris handling services for safe and organized site preparation.",
+
+        video:
+            "./data/services/demolition.mp4",
+
+        points: [
+            "Site Clearing",
+            "Land Levelling",
+            "Grading Works",
+            "Demolition Services",
+            "Debris Removal & Disposal"
+        ]
+    },
+
+    materials: {
+
+        title: "Construction Material Supply",
+
+        description:
+            "Consistent construction material supply with delivery coordination and site-ready logistics.",
+
+        video:
+            "./data/services/materials.mp4",
+
+        points: [
+            "River Sand Supply",
+            "M-Sand Supply",
+            "Filling Sand Supply",
+            "10mm, 20mm & 40mm Aggregates etc.",
+            "Gravel & Metal Supply",
+            "Bricks Supply",
+            "Fly Ash Bricks Supply",
+            "Concrete Blocks Supply"
+        ]
+    },
+
+    railway: {
+
+        title: "Railway Infrastructure Services",
+
+        description:
+            "Railway civil support and track-side infrastructure work executed with proper compliance.",
+
+        video:
+            "./data/services/railway.mp4",
+
+        points: [
+            "Railway Earthwork",
+            "Railway Trackside Civil Works",
+            "Railway Infrastructure Support"
+        ]
+    },
+
+    equipment: {
+
+        title: "Construction Equipment Rental",
+
+        description:
+            "Heavy equipment rental solutions with operator coordination and site deployment support.",
+
+        video:
+            "./data/services/equipment.mp4",
+
+        points: [
+            "JCB Rental",
+            "Excavator Rental",
+            "Heavy / Tipper Rental",
+            "Earthmoving Equipment Rental"
+        ]
+    },
+
+    logistics: {
+
+        title: "Logistics & Turnkey Project Solutions",
+
+        description:
+            "Efficient transportation planning and site logistics support for uninterrupted execution.",
+
+        video:
+            "./data/services/logistics.mp4",
+
+        points: [
+            "Material Transportation",
+            "Construction Logistics Support",
+            "Tipper Transport Services",
+            "Equipment Shifting Services",
+            "Government Project Execution",
+            "Private Project Contracts",
+            "Infrastructure Turnkey Projects",
+            "End-to-end Civil Work Solutions"
+        ]
+    }
+};
+
+const serviceCards =
+    document.querySelectorAll(".service-grid-card");
+
+const serviceTitle =
+    document.getElementById("serviceTitle");
+
+const serviceDescription =
+    document.getElementById("serviceDescription");
+
+const servicePoints =
+    document.getElementById("servicePoints");
+
+const serviceVideo =
+    document.getElementById("serviceVideo");
+
+if (serviceCards.length) {
+
+    serviceCards.forEach(card => {
+
+        card.addEventListener("click", function () {
+
+            const service =
+                this.dataset.service;
+
+            const data =
+                servicesData[service];
+
+            // Active State
+            serviceCards.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            // Update Title
+            serviceTitle.textContent =
+                data.title;
+
+            // Update Description
+            serviceDescription.textContent =
+                data.description;
+
+            // Update Points
+            servicePoints.innerHTML = "";
+
+            data.points.forEach(point => {
+
+                const li =
+                    document.createElement("li");
+
+                li.textContent = point;
+
+                servicePoints.appendChild(li);
+            });
+
+            // Update Video
+            serviceVideo.querySelector("source").src =
+                data.video;
+
+            serviceVideo.load();
+
+            serviceVideo.play();
+        });
+    });
+}

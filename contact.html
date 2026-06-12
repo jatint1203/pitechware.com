@@ -27,12 +27,25 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+
+<!-- DROPDOWN -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css">
+
+
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="norefresh.js"></script>
+
+    
+    <!-- FOR DROPDOWN  -->
+     <link
+    href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css"
+    rel="stylesheet"/>
+
   </head>
 
   <body>
@@ -52,7 +65,7 @@
       data-wow-delay="0.1s"
     >
       <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
-        <div class="col-lg-6 px-5 text-start">
+        <div class="col-lg-6 px-5 text-start topbar-time">
           <small
             ><i class="fa fa-map-marker-alt text-primary me-2"></i>C-2 / 13 /
             1:1, Sec-16, Vashi, Navi Mumbai</small
@@ -65,7 +78,7 @@
         <div class="col-lg-6 px-5 text-end">
           <small
             ><i class="fa fa-envelope text-primary me-2"></i
-            >info@ramavathinfratech.com</small
+            >info@ramavath.com</small
           >
           <small class="ms-4"
             ><i class="fa fa-phone-alt text-primary me-2"></i>(+91) 89281
@@ -79,8 +92,8 @@
       >
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0"
           ><div class="brand-mark">
-            <img src="img/logo.jpeg" alt="Ramavath InfraTech logo" /><span
-              >Ramavath</span
+            <img src="img/logo.png" alt="Ramavath InfraTech logo" /><span
+              >Ramavath InfraTech</span
             >
           </div></a
         >
@@ -98,7 +111,7 @@
             <a href="index.html" class="nav-item nav-link">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
             <a href="service.html" class="nav-item nav-link">Services</a>
-            <a href="feature.html" class="nav-item nav-link">Materials</a>
+            <a href="materials.html" class="nav-item nav-link">Materials</a>
             <a href="project.html" class="nav-item nav-link">Projects</a>
             <a href="team.html" class="nav-item nav-link">Team</a>
             <a href="testimonial.html" class="nav-item nav-link"
@@ -154,8 +167,8 @@
               <i class="fa fa-envelope"></i>
               <div>
                 <span>Email</span
-                ><a href="mailto:info@ramavathinfratech.com"
-                  >info@ramavathinfratech.com</a
+                ><a href="mailto:info@ramavath.com"
+                  >info@ramavath.com</a
                 >
               </div>
             </div>
@@ -163,7 +176,9 @@
               <i class="fa fa-map-marker-alt"></i>
               <div>
                 <span>Office</span>
-                <p>C-2 / 13 / 1:1, Sec-16, Vashi, Navi Mumbai</p>
+                <p>C-2 / 13 / 1:1, Sec-16, Vashi, Navi Mumbai, Maharashtra, India - 4000703</p>
+                <span>Hyderabad Office</span>
+                <p>14-1-209/284, Parvath Nagar, Hi-Tech city, Hyderabad, Telangana, India - 500018</p>
               </div>
             </div>
           </div>
@@ -171,85 +186,203 @@
             <div class="contact-card">
               <form id="form" name="form">
                 <div class="row g-3">
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        name="name"
-                        placeholder="Your Name"
-                      /><label for="name">Your Name</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="phone"
-                        name="phone"
-                        placeholder="Your Phone"
-                      /><label for="phone">Your Phone</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        name="email"
-                        placeholder="Your Email"
-                      /><label for="email">Your Email</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="subject"
-                        name="subject"
-                        placeholder="Requirement"
-                      /><label for="subject">Requirement</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="address"
-                        name="address"
-                        placeholder="Site Location"
-                      /><label for="address">Site Location</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="Project details"
-                        id="message"
-                        name="message"
-                        style="height: 140px"
-                      ></textarea
-                      ><label for="message">Project Details</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button
-                      class="btn btn-primary w-100 py-3"
-                      id="submit"
-                      type="button"
-                      value="Submit"
-                      name="submit"
-                    >
-                      Send Quote Request
-                    </button>
-                  </div>
-                </div>
+
+  <!-- Mandatory Note -->
+  <div class="col-12 mb-2">
+    <p class="mandatory-note mb-0">
+      <span>*</span> Marked fields are mandatory
+    </p>
+  </div>
+
+  <!-- Company Name -->
+  <div class="col-12">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="companyName"
+        name="companyName"
+        placeholder="Company Name"
+        required
+      />
+      <label for="companyName">Company Name *</label>
+    </div>
+  </div>
+
+  <!-- Contact Person -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="contactPerson"
+        name="contactPerson"
+        placeholder="Contact Person"
+        required
+      />
+      <label for="contactPerson">Enter Contact Person *</label>
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        name="phone"
+        placeholder="Phone Number"
+        required
+      />
+      <label for="phone">Phone Number *</label>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Email Address"
+        required
+      />
+      <label for="email">Email Address *</label>
+    </div>
+  </div>
+
+  <!-- Requirement -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="subject"
+        name="subject"
+        placeholder="Requirement"
+        required
+      />
+      <label for="subject">Requirement *</label>
+    </div>
+  </div>
+
+  <!-- Site Location -->
+  <div class="col-12">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        name="address"
+        placeholder="Site Location"
+        required
+      />
+      <label for="address">Site Location *</label>
+    </div>
+  </div>
+
+  <!-- State & City -->
+    <div class="col-12">
+    <div class="row g-3">
+
+      <!-- State -->
+      <div class="col-md-6">
+        <div class="custom-select-wrapper">
+
+          <select
+            id="state"
+            class="form-select"
+            required
+          >
+            <option value="">Select State</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- City -->
+      <div class="col-md-6">
+        <div class="custom-select-wrapper">
+          <!-- <label for="city" class="form-label">
+            City *
+          </label> -->
+
+          <select
+            id="city"
+            class="form-select"
+            required
+          >
+            <option value="">Select City</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- File Upload -->
+  <div class="col-12">
+
+    <label
+      for="projectFile"
+      class="form-label fw-semibold mb-2"
+    >
+      Upload BOQ / Drawing / Estimate (Optional)
+    </label>
+
+    <input
+      type="file"
+      class="form-control"
+      id="projectFile"
+      name="projectFile"
+      accept=".pdf,.xls,.xlsx"
+    />
+
+    <small class="text-muted">
+      Allowed formats: PDF, XLS, XLSX (Max 5 MB)
+    </small>
+
+    <div
+      id="fileError"
+      class="text-danger mt-2"
+      style="display: none;"
+    ></div>
+
+  </div>
+
+  <!-- Message -->
+  <div class="col-12">
+    <div class="form-floating">
+      <textarea
+        class="form-control"
+        placeholder="Project Details"
+        id="message"
+        name="message"
+        style="height: 140px"
+        required
+      ></textarea>
+
+      <label for="message">
+        Project Details *
+      </label>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="col-12">
+    <button
+      class="btn btn-primary w-100 py-3"
+      id="submit"
+      type="submit"
+      name="submit"
+    >
+      Send Quote Request
+    </button>
+  </div>
+
+</div>
               </form>
             </div>
           </div>
@@ -281,11 +414,14 @@
               Mumbai
             </p>
             <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3 text-primary"></i>Hyderabad, Telangana
+            </p>
+            <p class="mb-2">
               <i class="fa fa-phone-alt me-3 text-primary"></i>(+91) 89281 11637
             </p>
             <p class="mb-2">
               <i class="fa fa-envelope me-3 text-primary"></i
-              >info@ramavathinfratech.com
+              >info@ramavath.com
             </p>
           </div>
           <div class="col-lg-2 col-md-6">
@@ -293,7 +429,7 @@
             <a class="btn btn-link" href="service.html">Civil Construction</a
             ><a class="btn btn-link" href="service.html">Earthwork</a
             ><a class="btn btn-link" href="service.html">Road Works</a
-            ><a class="btn btn-link" href="feature.html">Materials</a>
+            ><a class="btn btn-link" href="materials.html">Materials</a>
           </div>
           <div class="col-lg-2 col-md-6">
             <h4 class="text-white mb-4">Company</h4>
@@ -343,6 +479,17 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
+
+<!-- TOM SELECT -->
+<script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+
+    <!-- DROPDOWN -->
+    <script src="js/states-cities-loader.js"></script>
+
     <script src="js/main.js"></script>
+
+    <!-- FOR DROPDOWN -->
+    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+    <script src="js/states-cities-loader.js"></script>
   </body>
 </html>

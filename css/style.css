@@ -1,6 +1,6 @@
 /********** Construction Theme CSS **********/
 :root {
-  --primary: #facc15;
+  --primary: #5573f8;
   --secondary: #111827;
   --tertiary: #6b7280;
   --light: #f5f5f4;
@@ -51,7 +51,7 @@ a {
 }
 
 .text-primary {
-  color: var(--primary) !important;
+  color: white !important;
 }
 
 .bg-primary {
@@ -59,21 +59,77 @@ a {
 }
 
 .bg-dark {
-  background-color: var(--dark) !important;
+  background-color: var(--primary) !important;
 }
 
 .section-kicker {
   display: inline-block;
   margin-bottom: 16px;
   padding: 7px 14px;
-  border: 1px solid var(--primary);
-  color: var(--dark);
-  background: rgba(250, 204, 21, 0.14);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: white;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
 }
+
+.hero-kicker {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 7px 14px;
+  border: 1px solid var(--primary);
+  color: var(--dark);
+  background: rgba(21 100 250 / 14%);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Tom Select Fix */
+
+.ts-wrapper {
+    width: 100%;
+}
+
+.ts-control {
+    min-height: 58px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 12px 14px;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+}
+
+.ts-control input {
+    font-size: 16px;
+}
+
+.ts-dropdown {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    overflow: hidden;
+}
+
+.ts-wrapper.focus .ts-control {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(85, 115, 248, 0.2);
+}
+
+/* FILE SUBMISSION */
+input[type="file"] {
+    padding: 14px;
+    border-radius: 10px;
+}
+
+input[type="file"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(85, 115, 248, 0.2);
+}
+
 
 .back-to-top {
   position: fixed;
@@ -106,14 +162,14 @@ a {
 .btn-primary,
 .btn-outline-primary:hover {
   color: #111827;
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: #4058c5;
+  border-color: #4058c5;
 }
 
 .btn-primary:hover {
   color: #111827;
-  background-color: #eab308;
-  border-color: #eab308;
+  background-color: #5573f8;
+  border-color: #5573f8;
   transform: translateY(-2px);
 }
 
@@ -153,6 +209,227 @@ a {
   height: 48px;
 }
 
+/* Interactive Services */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.service-grid-card {
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 32px 24px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.service-grid-card i {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(85, 115, 248, 0.1);
+
+    color: var(--primary);
+
+    border-radius: 18px;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.service-grid-card h5 {
+    margin: 0;
+
+    font-weight: 700;
+
+    font-size: 18px;
+}
+
+.service-grid-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--primary);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.service-grid-card:hover i {
+    background: var(--primary);
+
+    color: #fff;
+}
+
+.service-grid-card.active {
+   background: var(--primary);
+
+    border-color: var(--primary);
+
+    box-shadow: 0 15px 40px rgba(85, 115, 248, 0.25);
+
+    transform: translateY(-4px);
+}
+
+.service-grid-card.active i {
+ background: rgba(255,255,255,0.18);
+
+    color: #fff;
+}
+
+.service-grid-card.active h5 {
+    color: #fff;
+}
+
+/* Showcase */
+
+.service-showcase-horizontal {
+
+  width: 100%;
+
+    display: flex;
+
+    background: #fff;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+
+    min-height: 100%;
+}
+
+/* Video */
+
+.service-video-side {
+    width: 60%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+}
+
+.service-video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    flex: 1;
+}
+
+/* Content */
+
+.service-content-side {
+    width: 50%;
+
+    padding: 32px 36px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-content-side h3 {
+    font-size: 34px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.service-content-side p {
+    color: var(--tertiary);
+
+    line-height: 1.8;
+
+    margin-bottom: 24px;
+}
+
+.service-content-side ul {
+    padding-left: 20px;
+
+    margin-bottom: 0;
+
+    flex-grow: 1;
+}
+
+.service-content-side ul li {
+    margin-bottom: 12px;
+
+    color: var(--secondary);
+}
+
+/* Mobile */
+
+@media (max-width: 991px) {
+
+    .service-showcase-horizontal {
+        flex-direction: column;
+    }
+
+    .service-video-side,
+    .service-content-side {
+        width: 100%;
+    }
+
+    .service-video-side {
+        height: 300px;
+    }
+
+    .service-content-side {
+        padding: 28px;
+    }
+
+    .service-content-side h3 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid-card {
+        min-height: 150px;
+    }
+}
+
 /*** Navbar ***/
 .fixed-top {
   transition: 0.35s ease;
@@ -171,6 +448,10 @@ a {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
+.topbar-time{
+  white-space: nowrap;
+}
+
 .brand-mark {
   display: flex;
   align-items: center;
@@ -184,9 +465,10 @@ a {
 }
 
 .brand-mark img {
-  width: 46px;
-  height: 46px;
+  width: 75px;
+  height: 75px;
   object-fit: contain;
+  mix-blend-mode: rgba(255, 255, 255, 0.96);
 }
 
 .brand-mark span {
@@ -252,11 +534,31 @@ a {
 
 /*** Hero ***/
 .hero-section {
-  position: relative;
+  /* position: relative;
   min-height: 100vh;
   overflow: hidden;
   background: url("https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1800")
-    center center / cover no-repeat;
+    center center / cover no-repeat; */
+
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #000;
+
+}
+
+/* video loop */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 1;
 }
 
 .hero-overlay {
@@ -281,7 +583,7 @@ a {
 
 .hero-section .display-1 {
   max-width: 900px;
-  font-size: clamp(2.75rem, 7vw, 6.75rem);
+  font-size: clamp(2.75rem, 4vw, 6.75rem);
   line-height: 0.96;
 }
 
@@ -519,7 +821,7 @@ a {
 /*** Why ***/
 .why-section {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.88)),
-    url("https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1600")
+    url("https://images.pexels.com/photos/33122153/pexels-photo-33122153/free-photo-of-aerial-view-of-construction-excavator-on-site.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
       center center / cover no-repeat;
 }
 
@@ -643,6 +945,18 @@ a {
   box-shadow: 0 0 0 0.25rem rgba(250, 204, 21, 0.22);
 }
 
+/* DROPDOWN */
+.ts-control {
+    min-height: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.ts-control.focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(85, 115, 248, 0.25);
+}
+
 .map-frame {
   height: 360px;
   overflow: hidden;
@@ -698,7 +1012,7 @@ a {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: 10px;
-  color: var(--primary);
+  color: white;
 }
 
 .footer .btn.btn-link:hover {
@@ -762,7 +1076,7 @@ a {
   }
 
   .hero-section .display-1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {

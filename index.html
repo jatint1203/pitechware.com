@@ -27,10 +27,21 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+
+    <!-- DROPDOWN -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css">
+
     <link href="lib/animate/animate.min.css" rel="stylesheet" />
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+
+    <!-- FOR DROPDOWN  -->
+     <link
+    href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css"
+    rel="stylesheet"/>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="norefresh.js"></script>
   </head>
@@ -52,20 +63,19 @@
       data-wow-delay="0.1s"
     >
       <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
-        <div class="col-lg-6 px-5 text-start">
+        <div class="col-lg-6 px-5 text-start topbar-time">
           <small
             ><i class="fa fa-map-marker-alt text-primary me-2"></i>C-2 / 13 /
             1:1, Sec-16, Vashi, Navi Mumbai</small
           >
           <small class="ms-4"
-            ><i class="fa fa-clock text-primary me-2"></i>Mon - Sat, 9.00 am -
-            7.00 pm</small
+            ><i class="fa fa-clock text-primary me-2"></i>Mon - Sat : 9.00 am - 7.00 pm</small
           >
         </div>
         <div class="col-lg-6 px-5 text-end">
           <small
             ><i class="fa fa-envelope text-primary me-2"></i
-            >info@ramavathinfratech.com</small
+            >info@ramavath.com</small
           >
           <small class="ms-4"
             ><i class="fa fa-phone-alt text-primary me-2"></i>(+91) 89281
@@ -79,8 +89,8 @@
       >
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0"
           ><div class="brand-mark">
-            <img src="img/logo.jpeg" alt="Ramavath InfraTech logo" /><span
-              >Ramavath</span
+            <img src="img/logo.png" alt="Ramavath InfraTech logo" /><span
+              >Ramavath Infratech</span
             >
           </div></a
         >
@@ -98,7 +108,7 @@
             <a href="index.html" class="nav-item nav-link active">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
             <a href="service.html" class="nav-item nav-link">Services</a>
-            <a href="feature.html" class="nav-item nav-link">Materials</a>
+            <a href="materials.html" class="nav-item nav-link">Materials</a>
             <a href="project.html" class="nav-item nav-link">Projects</a>
             <a href="team.html" class="nav-item nav-link">Team</a>
             <a href="testimonial.html" class="nav-item nav-link"
@@ -115,15 +125,29 @@
       </nav>
     </div>
     <section class="hero-section">
+       <!-- Background Video -->
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  >
+    <source
+      src="https://videos.pexels.com/video-files/7791770/7791770-uhd_2560_1440_30fps.mp4"
+      type="video/mp4"
+    />
+  </video>
       <div class="hero-overlay"></div>
       <div class="container position-relative">
         <div class="row min-vh-100 align-items-center">
           <div class="col-lg-8 col-xl-7">
             <p
-              class="section-kicker text-white border-white wow fadeInUp"
+              class="text-white border-white wow fadeInUp hero-kicker"
               data-wow-delay="0.1s"
             >
-              Construction • Infrastructure • Supply
+              Welcome to Ramavath InfraTech
             </p>
             <h1
               class="display-1 text-white mb-4 wow fadeInUp"
@@ -157,35 +181,20 @@
     </section>
     <section class="container-xxl py-5">
       <div class="container py-lg-5">
-        <div class="row g-5 align-items-center">
+        <div class="row g-5">
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="image-stack">
+
+            <div class="image-stack mb-4">
               <img
                 class="img-fluid"
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                src="./img/civil-construction.jpg"
                 alt="Civil construction site"
               />
               <div class="experience-card">
                 <strong>10+</strong><span>Clients Served</span>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <p class="section-kicker">About Us</p>
-            <h2 class="display-5 mb-4">
-              Reliable execution for civil, infrastructure and material supply
-              contracts.
-            </h2>
-            <p class="mb-4">
-              We support government bodies, contractors, developers and
-              industrial clients with disciplined site execution, dependable
-              material supply and practical project coordination.
-            </p>
-            <p class="mb-4">
-              From excavation and road work to demolition, Transportation & Logistics and
-              construction materials, our team focuses on safety, documentation,
-              timeline control and transparent communication.
-            </p>
+
             <div class="row g-3">
               <div class="col-sm-6">
                 <div class="highlight-card">
@@ -208,6 +217,24 @@
                 </div>
               </div>
             </div>
+
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+            <p class="section-kicker">About Us</p>
+            <h2 class="display-5 mb-4">
+              Reliable execution for civil, infrastructure and material supply
+              contracts.
+            </h2>
+            <p class="mb-4">
+              Ramavath InfraTech is a professionally managed civil consruction and infrastructure development company delivering high-quality engineering, construction, earthwork, infrastructure, transportation and building material supply solutions for Government, Private and Corporate sector projects.
+            </p>
+            <p class="mb-4">
+              With a strong commitment to quality, safety, reliability and timely execution, we specialize in handling residential, commercial, industrial, infrastructure, and turnkey civil projects with professional project management and engineering excellence.
+            </p>
+            <p class="mb-4">
+              Backed by technical expertise and practical field experience, Ramavath InfraTech has established itself as a reliable for civil construction, road works, excavation, land development, railway civil works, demolition, heavy equipment rental and construction support services. We provide complete end-to-end project solutions including planning, execution, earthmoving, transportation, material supply, site development and infrastructure support services tailored to client requirements.
+            </p>
+            
           </div>
         </div>
       </div>
@@ -266,15 +293,17 @@
             Construction services built for demanding sites and deadlines.
           </h2>
         </div>
-        <div class="row g-4">
+<div class="row g-4">
           <div class="col-md-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
             <div class="service-card">
               <i class="fa fa-city"></i>
-              <h4>Civil Construction</h4>
+              <h4>Civil & Building Construction</h4>
               <ul>
-                <li>RCC and masonry work</li>
-                <li>Foundations and plinth work</li>
-                <li>Residential and commercial structures</li>
+                <li>Residential Building Construction</li>
+                <li>Commercial Building Construction</li>
+                <li>Industrial Civil Works</li>
+                <li>Turnkey Civil Projects</li>
+                <li>Foundation & Structural Works</li>
                 <li>Repair and maintenance contracts</li>
               </ul>
             </div>
@@ -282,35 +311,40 @@
           <div class="col-md-6 col-xl-4 wow fadeInUp" data-wow-delay="0.14s">
             <div class="service-card">
               <i class="fa fa-mountain"></i>
-              <h4>Earthwork & Excavation</h4>
+              <h4>Earthwork & Excavation Solutions</h4>
               <ul>
-                <li>Bulk excavation</li>
-                <li>Backfilling and compaction</li>
-                <li>Leveling and grading</li>
+                <li>Site excavation</li>
+                <li>Land Development Earthwork</li>
+                <li>Trenching & Backfilling</li>
+                <li>Cutting & Filling Works</li>
                 <li>Soil disposal coordination</li>
+                <li>Excavator / JCB Services</li>
               </ul>
             </div>
           </div>
           <div class="col-md-6 col-xl-4 wow fadeInUp" data-wow-delay="0.18s">
             <div class="service-card">
               <i class="fa fa-road"></i>
-              <h4>Road & Infrastructure</h4>
+              <h4>Road & Infrastructure Projects</h4>
               <ul>
-                <li>Internal roads and pavements</li>
-                <li>Drainage and utility trenches</li>
-                <li>Kerb, gutter and pathway work</li>
+                <li>Road Construction</li>
+                <li>Internal Roads & Layout Roads</li>
+                <li>Kerb, Culvert and pathway work</li>
                 <li>Industrial infrastructure support</li>
+                <li>Government & Private Contract Works</li>
               </ul>
             </div>
           </div>
           <div class="col-md-6 col-xl-4 wow fadeInUp" data-wow-delay="0.22s">
             <div class="service-card">
               <i class="fa fa-tools"></i>
-              <h4>Site Clearing & Demolition</h4>
+              <h4>Demolition & Site Development</h4>
               <ul>
-                <li>Controlled demolition</li>
-                <li>Debris removal</li>
+                <li>Site Clearing</li>
+                <li>Land Levelling</li>
+                <li>Demolition Services</li>
                 <li>Plot cleaning and preparation</li>
+                <li>Debris Removal & Disposal</li>
                 <li>Scrap handling support</li>
               </ul>
             </div>
@@ -318,12 +352,16 @@
           <div class="col-md-6 col-xl-4 wow fadeInUp" data-wow-delay="0.26s">
             <div class="service-card">
               <i class="fa fa-cubes"></i>
-              <h4>Materials Supply</h4>
+              <h4>Construction Material Supply</h4>
               <ul>
-                <li>River sand and M-Sand</li>
-                <li>Aggregates and metal</li>
-                <li>Bricks and concrete blocks</li>
-                <li>Scheduled bulk delivery</li>
+                <li>River Sand Supply</li>
+                <li>M-Sand Supply</li>
+                <li>Filling Sand Supply</li>
+                <li>10mm, 20mm & 40mm Aggregates etc.</li>
+                <li>Gravel & Metal Supply</li>
+                <li>Bricks Supply</li>
+                <li>Fly Ash Bricks Supply</li>
+                <li>Concrete Blocks Supply</li>
               </ul>
             </div>
           </div>
@@ -333,11 +371,11 @@
           >
             <div class="service-card">
               <i class="fa fa-train"></i>
-              <h4>Railway Works</h4>
+              <h4>Railway Infrastructure Services</h4>
               <ul>
-                <li>Formation and earthwork</li>
+                <li>Railway earthwork</li>
                 <li>Track-side civil support</li>
-                <li>Drainage and access work</li>
+                <li>Railway Infrastructure Support</li>
                 <li>Vendor and manpower coordination</li>
               </ul>
             </div>
@@ -348,24 +386,29 @@
           >
             <div class="service-card">
               <i class="fa fa-truck"></i>
-              <h4>Equipment Rental</h4>
+              <h4>Construction Equipment Rental</h4>
               <ul>
                 <li>JCB and excavator support</li>
-                <li>Dumpers and tractors</li>
+                <li>Hyva/Dumpers and tractors</li>
                 <li>Compactors and site tools</li>
                 <li>Operator coordination</li>
+                <li>Earthmoving Equipment Rental</li>
               </ul>
             </div>
           </div>
           <div class="col-md-6 col-xl-4 wow fadeInUp" data-wow-delay="0.38s">
             <div class="service-card">
               <i class="fa fa-route"></i>
-              <h4>Transportation & Logistics</h4>
+              <h4>Transportation & Turnkey Project Solutions</h4>
               <ul>
-                <li>Material movement planning</li>
-                <li>Site-to-site transport</li>
-                <li>Loading and unloading support</li>
-                <li>Daily dispatch tracking</li>
+                <li>Material Transportation</li>
+                <li>Construction Logistics Support</li>
+                <li>Tipper Transport Services</li>
+                <li>Equipment Shifting Services</li>
+                <li>Government Project Execution</li>
+                <li>Private Project Contracts</li>
+                <li>Infrastructure Turnkey Projects</li>
+                <li>End-to-End Civil Work Solutions</li>
               </ul>
             </div>
           </div>
@@ -381,6 +424,8 @@
                 <li>Site supervision assistance</li>
                 <li>Emergency restoration work</li>
                 <li>Custom execution packages</li>
+                <li>Aggregate & Sand Supply</li>
+                <li>Infrastructure & Civil Engineering Solutions</li>
               </ul>
             </div>
           </div>
@@ -408,7 +453,7 @@
           <div class="col-sm-6 col-lg wow fadeInUp" data-wow-delay="0.1s">
             <div class="material-card">
               <img
-                src="https://images.pexels.com/photos/4888564/pexels-photo-4888564.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="./img/river-sand.jpg"
                 alt="River Sand"
               />
               <div>
@@ -526,7 +571,7 @@
           >
             <div class="project-card">
               <img
-                src="https://images.pexels.com/photos/37061930/pexels-photo-37061930.jpeg?auto=compress&cs=tinysrgb&w=900"
+                src="./img/site-development.jpg"
                 alt="Industrial construction"
               />
               <div class="project-info">
@@ -681,8 +726,8 @@
               <i class="fa fa-envelope"></i>
               <div>
                 <span>Email</span
-                ><a href="mailto:info@ramavathinfratech.com"
-                  >info@ramavathinfratech.com</a
+                ><a href="mailto:info@ramavath.com"
+                  >info@ramavath.com</a
                 >
               </div>
             </div>
@@ -690,7 +735,9 @@
               <i class="fa fa-map-marker-alt"></i>
               <div>
                 <span>Office</span>
-                <p>C-2 / 13 / 1:1, Sec-16, Vashi, Navi Mumbai</p>
+                <p>C-2 / 13 / 1:1, Sec-16, Vashi, Navi Mumbai, Maharashtra, India - 4000703</p>
+                <span>Hyderabad Office</span>
+                <p>14-1-209/284, Parvath Nagar, Hi-Tech city, Hyderabad, Telangana, India - 500018</p>
               </div>
             </div>
           </div>
@@ -698,85 +745,203 @@
             <div class="contact-card">
               <form id="form" name="form">
                 <div class="row g-3">
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        name="name"
-                        placeholder="Your Name"
-                      /><label for="name">Your Name</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="phone"
-                        name="phone"
-                        placeholder="Your Phone"
-                      /><label for="phone">Your Phone</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        name="email"
-                        placeholder="Your Email"
-                      /><label for="email">Your Email</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="subject"
-                        name="subject"
-                        placeholder="Requirement"
-                      /><label for="subject">Requirement</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="address"
-                        name="address"
-                        placeholder="Site Location"
-                      /><label for="address">Site Location</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="Project details"
-                        id="message"
-                        name="message"
-                        style="height: 140px"
-                      ></textarea
-                      ><label for="message">Project Details</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button
-                      class="btn btn-primary w-100 py-3"
-                      id="submit"
-                      type="button"
-                      value="Submit"
-                      name="submit"
-                    >
-                      Send Quote Request
-                    </button>
-                  </div>
-                </div>
+
+  <!-- Mandatory Note -->
+  <div class="col-12 mb-2">
+    <p class="mandatory-note mb-0">
+      <span>*</span> Marked fields are mandatory
+    </p>
+  </div>
+
+  <!-- Company Name -->
+  <div class="col-12">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="companyName"
+        name="companyName"
+        placeholder="Company Name"
+        required
+      />
+      <label for="companyName">Company Name *</label>
+    </div>
+  </div>
+
+  <!-- Contact Person -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="contactPerson"
+        name="contactPerson"
+        placeholder="Contact Person"
+        required
+      />
+      <label for="contactPerson">Enter Contact Person *</label>
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        name="phone"
+        placeholder="Phone Number"
+        required
+      />
+      <label for="phone">Phone Number *</label>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Email Address"
+        required
+      />
+      <label for="email">Email Address *</label>
+    </div>
+  </div>
+
+  <!-- Requirement -->
+  <div class="col-sm-6">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="subject"
+        name="subject"
+        placeholder="Requirement"
+        required
+      />
+      <label for="subject">Requirement *</label>
+    </div>
+  </div>
+
+  <!-- Site Location -->
+  <div class="col-12">
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        name="address"
+        placeholder="Site Location"
+        required
+      />
+      <label for="address">Site Location *</label>
+    </div>
+  </div>
+
+  <!-- State & City -->
+  <div class="col-12">
+    <div class="row g-3">
+
+      <!-- State -->
+      <div class="col-md-6">
+        <div class="custom-select-wrapper">
+
+          <select
+            id="state"
+            class="form-select"
+            required
+          >
+            <option value="">Select State</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- City -->
+      <div class="col-md-6">
+        <div class="custom-select-wrapper">
+          <!-- <label for="city" class="form-label">
+            City *
+          </label> -->
+
+          <select
+            id="city"
+            class="form-select"
+            required
+          >
+            <option value="">Select City</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- File Upload -->
+  <div class="col-12">
+
+    <label
+      for="projectFile"
+      class="form-label fw-semibold mb-2"
+    >
+      Upload BOQ / Drawing / Estimate (Optional)
+    </label>
+
+    <input
+      type="file"
+      class="form-control"
+      id="projectFile"
+      name="projectFile"
+      accept=".pdf,.xls,.xlsx"
+    />
+
+    <small class="text-muted">
+      Allowed formats: PDF, XLS, XLSX (Max 5 MB)
+    </small>
+
+    <div
+      id="fileError"
+      class="text-danger mt-2"
+      style="display: none;"
+    ></div>
+
+  </div>
+
+  <!-- Message -->
+  <div class="col-12">
+    <div class="form-floating">
+      <textarea
+        class="form-control"
+        placeholder="Project Details"
+        id="message"
+        name="message"
+        style="height: 140px"
+        required
+      ></textarea>
+
+      <label for="message">
+        Project Details *
+      </label>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="col-12">
+    <button
+      class="btn btn-primary w-100 py-3"
+      id="submit"
+      type="submit"
+      name="submit"
+    >
+      Send Quote Request
+    </button>
+  </div>
+
+</div>
               </form>
             </div>
           </div>
@@ -808,11 +973,14 @@
               Mumbai
             </p>
             <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3 text-primary"></i>Hyderabad, Telangana
+            </p>
+            <p class="mb-2">
               <i class="fa fa-phone-alt me-3 text-primary"></i>(+91) 89281 11637
             </p>
             <p class="mb-2">
               <i class="fa fa-envelope me-3 text-primary"></i
-              >info@ramavathinfratech.com
+              >info@ramavath.com
             </p>
           </div>
           <div class="col-lg-2 col-md-6">
@@ -820,7 +988,7 @@
             <a class="btn btn-link" href="service.html">Civil Construction</a
             ><a class="btn btn-link" href="service.html">Earthwork</a
             ><a class="btn btn-link" href="service.html">Road Works</a
-            ><a class="btn btn-link" href="feature.html">Materials</a>
+            ><a class="btn btn-link" href="materials.html">Materials</a>
           </div>
           <div class="col-lg-2 col-md-6">
             <h4 class="text-white mb-4">Company</h4>
@@ -870,6 +1038,17 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- TOM SELECT -->
+<script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+
+    <!-- DROPDOWN -->
+    <script src="js/states-cities-loader.js"></script>
+
     <script src="js/main.js"></script>
+
+    <!-- FOR DROPDOWN -->
+    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+    <script src="js/states-cities-loader.js"></script>
   </body>
 </html>
