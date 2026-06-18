@@ -452,28 +452,44 @@ input[type="file"]:focus {
   white-space: nowrap;
 }
 
+.navbar .navbar-brand {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 320px;
+}
+
 .brand-mark {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(8px, 1.5vw, 12px);
   color: var(--dark);
-  font-size: clamp(1.05rem, 1.65vw, 1.65rem);
   font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
+  line-height: 1.2;
+  min-width: 0;
 }
 
 .brand-mark img {
-  width: 75px;
-  height: 75px;
+  flex-shrink: 0;
+  width: clamp(44px, 9vw, 56px);
+  height: clamp(44px, 9vw, 56px);
   object-fit: contain;
-  mix-blend-mode: rgba(255, 255, 255, 0.96);
+  display: block;
+  border-radius: 10px;
 }
 
 .brand-mark span {
   color: var(--dark);
-  letter-spacing: 0;
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  min-width: 0;
+}
+
+@media (min-width: 992px) {
+  .brand-mark span {
+    white-space: nowrap;
+  }
 }
 
 .navbar .navbar-nav .nav-link {
@@ -509,8 +525,19 @@ input[type="file"]:focus {
 
 @media (max-width: 991.98px) {
   .navbar {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .navbar .navbar-brand {
+    max-width: calc(100% - 64px);
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  .brand-mark span {
+    white-space: normal;
+    max-width: 11.5rem;
   }
 
   .navbar .navbar-nav {
@@ -1062,11 +1089,6 @@ input[type="file"]:focus {
     white-space: normal;
   }
 
-  .brand-mark {
-    white-space: normal;
-    line-height: 1.15;
-  }
-
   .hero-section {
     min-height: 820px;
   }
@@ -1095,12 +1117,17 @@ input[type="file"]:focus {
 @media (max-width: 575.98px) {
   .brand-mark {
     gap: 8px;
-    font-size: 1rem;
   }
 
   .brand-mark img {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-mark span {
+    font-size: 0.82rem;
+    max-width: 9.75rem;
+    line-height: 1.15;
   }
 
   .section-kicker {
