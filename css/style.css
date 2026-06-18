@@ -1035,6 +1035,38 @@ input[type="file"]:focus {
 }
 
 @media (max-width: 991.98px) {
+  .page-header {
+    margin-top: 72px;
+  }
+
+  section.container-xxl,
+  section.contact-section,
+  section.materials-section,
+  section.why-section {
+    scroll-margin-top: 90px;
+    overflow: visible;
+  }
+
+  .wow.fadeInUp,
+  .wow.fadeIn {
+    overflow: visible !important;
+  }
+
+  .section-kicker {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+    white-space: normal;
+  }
+
+  .brand-mark {
+    white-space: normal;
+    line-height: 1.15;
+  }
+
   .hero-section {
     min-height: 820px;
   }

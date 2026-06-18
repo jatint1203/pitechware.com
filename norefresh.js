@@ -1,79 +1,60 @@
 $(document).ready(function () {
-  $("#submit").click(function () {
-    // alert("test")
+  $("#form").on("submit", function (e) {
+    e.preventDefault();
+
+    var contactPerson = $("#contactPerson").val().trim();
+    var phone = $("#phone").val().trim();
+
+    if (!contactPerson || !phone) {
+      alert("Please fill Contact Person and Phone Number.");
+      return;
+    }
 
     var urls = window.location.pathname.split("/").pop() || "index.html";
+    var formData = new FormData();
 
-    // console.log(urls)
+    formData.append("urls1", urls);
+    formData.append("companyName1", $("#companyName").val() || "");
+    formData.append("contactPerson1", contactPerson);
+    formData.append("phone1", phone);
+    formData.append("email1", $("#email").val() || "");
+    formData.append("subject1", $("#subject").val() || "");
+    formData.append("address1", $("#address").val() || "");
+    formData.append("state1", $("#state").val() || "");
+    formData.append("city1", $("#city").val() || "");
+    formData.append("message1", $("#message").val() || "");
 
-    // Construction quote form
-    if (urls != "contact.html") {
-      // alert("ind")
-
-      var name = $("#name").val();
-      var email = $("#email").val();
-      var subject = $("#subject").val();
-      var message = $("#message").val();
-      var address = "";
-      var phone = $("#phone").val();
-
-      if (name == "" || email == "" || subject == "" || phone == "") {
-        alert("Fill all the Mandatory fields");
-      } else {
-        // Returns successful data submission message when the entered information is stored in database.
-        $.post(
-          "database.php",
-          {
-            urls1: urls, //this is to check where it came from
-            name1: name,
-            email1: email,
-            subject1: subject,
-            message1: message,
-            address1: address,
-            phone1: phone,
-          },
-          function (data) {
-            alert(data);
-            $("#form")[0].reset(); // To reset form fields
-          }
-        );
-      }
+    var fileInput = document.getElementById("projectFile");
+    if (fileInput && fileInput.files[0]) {
+      formData.append("projectFile", fileInput.files[0]);
     }
 
-    //contact
-    else if (urls == "contact.html") {
-      var name = $("#name").val();
-      var email = $("#email").val();
-      var subject = $("#subject").val();
-      var message = $("#message").val();
-      var address = $("#address").val() || "";
-      var phone = $("#phone").val();
+    var $submit = $("#submit");
+    $submit.prop("disabled", true);
 
-      if (name == "" || email == "" || subject == "" || phone == "") {
-        alert("Fill all the Mandatory fields");
-      } else {
-        $(this).attr("disabled", "disabled"); //This function disable the submit  button
+    $.ajax({
+      url: "database.php",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (data) {
+        alert(data);
+        $("#form")[0].reset();
 
-        // Returns successful data submission message when the entered information is stored in database.
-        $.post(
-          "database.php",
-          {
-            urls1: urls, //this is to check where it came from
-            name1: name,
-            email1: email,
-            subject1: subject,
-            message1: message,
-            address1: address,
-            phone1: phone,
-          },
-          function (data) {
-            var btn = document.getElementById("submit");
-            btn.disabled = false;
-            alert(data);
-            $("#form")[0].reset(); // To reset form fields
-          }
-        );
-      }
-    }
+        if (document.getElementById("state") && document.getElementById("state").tomselect) {
+          document.getElementById("state").tomselect.clear();
+        }
+        if (document.getElementById("city") && document.getElementById("city").tomselect) {
+          document.getElementById("city").tomselect.clear();
+        }
+
+        $submit.prop("disabled", false);
+      },
+      error: function () {
+        alert("Something went wrong. Please try again or call us directly.");
+        $submit.prop("disabled", false);
+      },
+    });
   });
 });
