@@ -513,68 +513,34 @@ input[type="file"]:focus {
 }
 
 .navbar .navbar-brand {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  max-width: min(420px, calc(100% - 70px));
-}
-
-.brand-mark {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  color: var(--dark);
-  font-weight: 800;
-  line-height: 1.15;
-  min-width: 0;
+  gap: clamp(10px, 2.5vw, 14px);
+  padding: clamp(0.4rem, 1.2vw, 0.75rem) 0;
+  max-width: min(100%, calc(100% - 58px));
 }
 
-.brand-mark__icon {
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #0a0a0a;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-}
-
-.brand-mark__icon img {
-  width: 64px;
-  height: auto;
-  min-height: 90px;
-  object-fit: cover;
-  object-position: top center;
+.site-logo {
   display: block;
+  flex-shrink: 0;
+  width: auto;
+  height: clamp(56px, 15vw, 76px);
+  object-fit: contain;
+  object-position: center;
 }
 
-.brand-mark__name,
-.brand-mark span {
+.site-name {
   color: var(--dark);
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: clamp(1.05rem, 3.4vw, 1.4rem);
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.02em;
-  min-width: 0;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 @media (min-width: 992px) {
-  .brand-mark__icon {
-    width: 72px;
-    height: 72px;
-  }
-
-  .brand-mark__icon img {
-    width: 72px;
-    min-height: 102px;
-  }
-
-  .brand-mark__name,
-  .brand-mark span {
-    font-size: 1.22rem;
-    white-space: nowrap;
+  .navbar .navbar-brand {
+    max-width: 380px;
   }
 }
 
@@ -611,35 +577,14 @@ input[type="file"]:focus {
 
 @media (max-width: 991.98px) {
   .navbar {
-    padding-top: 8px;
-    padding-bottom: 8px;
+    min-height: 64px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .navbar .navbar-brand {
-    max-width: calc(100% - 58px);
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .brand-mark {
     gap: 10px;
-  }
-
-  .brand-mark__icon {
-    width: 72px;
-    height: 72px;
-  }
-
-  .brand-mark__icon img {
-    width: 72px;
-    min-height: 102px;
-  }
-
-  .brand-mark__name,
-  .brand-mark span {
-    font-size: 0.9rem;
-    line-height: 1.2;
-    max-width: 9rem;
+    padding: 0.35rem 0;
   }
 
   .navbar .navbar-nav {
@@ -1221,27 +1166,6 @@ input[type="file"]:focus {
 }
 
 @media (max-width: 575.98px) {
-  .brand-mark {
-    gap: 8px;
-  }
-
-  .brand-mark__icon {
-    width: 66px;
-    height: 66px;
-  }
-
-  .brand-mark__icon img {
-    width: 66px;
-    min-height: 94px;
-  }
-
-  .brand-mark__name,
-  .brand-mark span {
-    font-size: 0.82rem;
-    max-width: 8.5rem;
-    line-height: 1.18;
-  }
-
   .section-kicker {
     font-size: 12px;
   }

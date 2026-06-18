@@ -466,7 +466,7 @@ if (navbarCollapse) {
     navbarCollapse.addEventListener("hidden.bs.collapse", setNavbarOffset);
 }
 
-const navbarLogo = document.querySelector(".brand-mark img");
+const navbarLogo = document.querySelector(".site-logo");
 
 if (navbarLogo) {
     navbarLogo.addEventListener("load", setNavbarOffset);
