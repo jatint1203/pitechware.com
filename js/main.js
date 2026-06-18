@@ -433,3 +433,41 @@ if (serviceCards.length) {
         });
     });
 }
+
+function setNavbarOffset() {
+    const navbar = document.querySelector(".fixed-top");
+
+    if (!navbar) {
+        return;
+    }
+
+    const height = Math.ceil(navbar.getBoundingClientRect().height);
+    document.documentElement.style.setProperty(
+        "--navbar-offset",
+        height + "px"
+    );
+}
+
+window.addEventListener("load", function () {
+    setNavbarOffset();
+    setTimeout(setNavbarOffset, 150);
+});
+
+window.addEventListener("resize", setNavbarOffset);
+
+if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setNavbarOffset);
+}
+
+const navbarCollapse = document.getElementById("navbarCollapse");
+
+if (navbarCollapse) {
+    navbarCollapse.addEventListener("shown.bs.collapse", setNavbarOffset);
+    navbarCollapse.addEventListener("hidden.bs.collapse", setNavbarOffset);
+}
+
+const navbarLogo = document.querySelector(".brand-mark img");
+
+if (navbarLogo) {
+    navbarLogo.addEventListener("load", setNavbarOffset);
+}

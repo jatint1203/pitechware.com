@@ -6,6 +6,7 @@
   --light: #f5f5f4;
   --dark: #0a0a0a;
   --border: #e5e7eb;
+  --navbar-offset: 100px;
 }
 
 html {
@@ -435,6 +436,20 @@ input[type="file"]:focus {
   transition: 0.35s ease;
 }
 
+.fixed-top + .page-header {
+  margin-top: 0;
+  padding-top: calc(var(--navbar-offset) + 1.25rem);
+}
+
+.fixed-top + .hero-section {
+  padding-top: var(--navbar-offset);
+}
+
+.page-header {
+  padding-bottom: 2.5rem;
+  background: var(--light);
+}
+
 .top-bar {
   height: 45px;
   color: #d1d5db;
@@ -453,15 +468,15 @@ input[type="file"]:focus {
 }
 
 .navbar .navbar-brand {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  max-width: 320px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  max-width: 400px;
 }
 
 .brand-mark {
   display: flex;
   align-items: center;
-  gap: clamp(8px, 1.5vw, 12px);
+  gap: clamp(10px, 2vw, 14px);
   color: var(--dark);
   font-weight: 800;
   line-height: 1.2;
@@ -470,8 +485,10 @@ input[type="file"]:focus {
 
 .brand-mark img {
   flex-shrink: 0;
-  width: clamp(44px, 9vw, 56px);
-  height: clamp(44px, 9vw, 56px);
+  width: auto;
+  height: clamp(58px, 14vw, 78px);
+  max-width: 150px;
+  min-height: 52px;
   object-fit: contain;
   display: block;
   border-radius: 10px;
@@ -489,6 +506,11 @@ input[type="file"]:focus {
 @media (min-width: 992px) {
   .brand-mark span {
     white-space: nowrap;
+  }
+
+  .brand-mark img {
+    height: 78px;
+    max-width: 160px;
   }
 }
 
@@ -531,8 +553,13 @@ input[type="file"]:focus {
 
   .navbar .navbar-brand {
     max-width: calc(100% - 64px);
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .brand-mark img {
+    height: 64px;
+    max-width: 130px;
   }
 
   .brand-mark span {
@@ -1062,15 +1089,11 @@ input[type="file"]:focus {
 }
 
 @media (max-width: 991.98px) {
-  .page-header {
-    margin-top: 72px;
-  }
-
   section.container-xxl,
   section.contact-section,
   section.materials-section,
   section.why-section {
-    scroll-margin-top: 90px;
+    scroll-margin-top: calc(var(--navbar-offset) + 16px);
     overflow: visible;
   }
 
@@ -1116,17 +1139,17 @@ input[type="file"]:focus {
 
 @media (max-width: 575.98px) {
   .brand-mark {
-    gap: 8px;
+    gap: 10px;
   }
 
   .brand-mark img {
-    width: 42px;
-    height: 42px;
+    height: 58px;
+    max-width: 118px;
   }
 
   .brand-mark span {
-    font-size: 0.82rem;
-    max-width: 9.75rem;
+    font-size: 0.88rem;
+    max-width: 10.5rem;
     line-height: 1.15;
   }
 
