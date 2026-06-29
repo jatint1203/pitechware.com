@@ -11,8 +11,21 @@
   };
   spinner();
 
-  // Initiate the wowjs
-  new WOW().init();
+  // Initiate the wowjs — disable scroll animations on mobile so content
+  // stays visible (fixes overlap glitches and blank mobile screenshots).
+  new WOW({ mobile: false }).init();
+
+  // Ensure loading overlay never blocks the page or screenshots.
+  function hidePageSpinner() {
+    var spinnerEl = document.getElementById("spinner");
+    if (spinnerEl) {
+      spinnerEl.classList.remove("show");
+    }
+  }
+
+  hidePageSpinner();
+  window.addEventListener("load", hidePageSpinner);
+  document.addEventListener("DOMContentLoaded", hidePageSpinner);
 
   // Fixed Navbar
   $(window).scroll(function () {

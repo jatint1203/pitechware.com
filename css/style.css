@@ -17,6 +17,10 @@ body {
   font-family: "Poppins", sans-serif;
   color: #4b5563;
   background: #ffffff;
+  -webkit-user-select: auto;
+  user-select: auto;
+  -webkit-touch-callout: default;
+  touch-action: manipulation;
 }
 
 h1,
@@ -152,6 +156,15 @@ input[type="file"]:focus {
   transition: opacity 0.5s ease-out, visibility 0s linear 0s;
   visibility: visible;
   opacity: 1;
+  animation: spinner-fallback-hide 0.25s ease 3.5s forwards;
+}
+
+@keyframes spinner-fallback-hide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 .btn {
@@ -1116,13 +1129,76 @@ input[type="file"]:focus {
   color: var(--primary);
 }
 
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #111827;
+  background: var(--primary);
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.btn-social:hover {
+  color: #fff;
+  background: #4058c5;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 991.98px) {
+  :root {
+    --navbar-offset: 72px;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .wow,
+  .wow.animated {
+    visibility: visible !important;
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .container-fluid.fixed-top {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .navbar-collapse {
+    max-height: calc(100dvh - var(--navbar-offset));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   section.container-xxl,
   section.contact-section,
   section.materials-section,
   section.why-section {
     scroll-margin-top: calc(var(--navbar-offset) + 16px);
     overflow: visible;
+  }
+
+  .container-xxl.py-5 > .container,
+  .container.py-lg-5 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .display-5 {
+    font-size: clamp(1.45rem, 5.5vw, 2.35rem);
+    line-height: 1.2;
+    word-wrap: break-word;
   }
 
   .wow.fadeInUp,
@@ -1141,19 +1217,55 @@ input[type="file"]:focus {
   }
 
   .hero-section {
-    min-height: 820px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    overflow: visible;
+    background: url("../img/civil-construction.jpg") center center / cover no-repeat #000;
+  }
+
+  .hero-video {
+    display: none;
+  }
+
+  .hero-section > .container {
+    flex: 1 1 auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-section .row.min-vh-100 {
+    min-height: auto !important;
+    padding-bottom: 1rem;
+  }
+
+  .hero-kicker {
+    white-space: normal;
+    max-width: 100%;
+    line-height: 1.4;
+    word-break: break-word;
   }
 
   .hero-panel {
-    left: 24px;
-    right: 24px;
-    bottom: 24px;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0 16px 20px;
+    width: calc(100% - 32px);
+    max-width: none;
     grid-template-columns: 1fr;
+    z-index: 2;
   }
 
   .hero-panel span {
     border-right: 0;
     border-bottom: 1px solid var(--border);
+    white-space: normal;
+    text-align: center;
   }
 
   .hero-panel span:last-child {
@@ -1161,7 +1273,179 @@ input[type="file"]:focus {
   }
 
   .image-stack img {
-    min-height: 360px;
+    min-height: 280px;
+  }
+
+  .experience-card {
+    width: 132px;
+    padding: 16px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .experience-card strong {
+    font-size: 32px;
+  }
+
+  .contact-detail {
+    flex-wrap: wrap;
+  }
+
+  .contact-detail > div {
+    min-width: 0;
+    flex: 1 1 auto;
+    word-break: break-word;
+  }
+
+  .map-frame {
+    height: 280px;
+  }
+
+  .service-showcase-horizontal {
+    border-radius: 16px;
+  }
+
+  .service-content-side {
+    padding: 22px;
+  }
+
+  .service-content-side h3 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .project-card,
+  .project-card img {
+    min-height: 280px;
+    height: auto;
+  }
+
+  .facts h3.display-4 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .page-header {
+    padding-top: calc(var(--navbar-offset) + 1rem);
+    padding-bottom: 2rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    line-height: 1.15;
+  }
+
+  .footer .row.g-5 > [class*="col-"] {
+    min-width: 0;
+  }
+
+  .whatsapp-float {
+    bottom: 20px;
+    z-index: 99;
+  }
+
+  .back-to-top {
+    bottom: 84px;
+    z-index: 98;
+  }
+}
+
+@media (max-width: 991.98px) and (orientation: portrait) {
+  .hero-section .display-1 {
+    font-size: clamp(1.85rem, 9vw, 2.65rem);
+    line-height: 1.05;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .navbar .navbar-brand {
+    max-width: calc(100% - 58px);
+  }
+
+  .service-grid-card {
+    min-height: 160px;
+    padding: 24px 16px;
+  }
+
+  .testimonial-item {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 991.98px) and (orientation: landscape) {
+  .hero-section .display-1 {
+    font-size: clamp(1.55rem, 4.5vw, 2.15rem);
+    line-height: 1.05;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero-section > .container {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .hero-section .btn {
+    padding: 0.55rem 1.15rem !important;
+    font-size: 0.9rem;
+  }
+
+  .hero-panel {
+    margin: 0 16px 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-panel span {
+    border-bottom: 0;
+    border-right: 1px solid var(--border);
+    padding: 10px 8px;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .hero-panel span:last-child {
+    border-right: 0;
+  }
+
+  .page-header {
+    padding-top: calc(var(--navbar-offset) + 0.5rem);
+    padding-bottom: 1.25rem;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    padding: 8px 0;
+  }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel span {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 8px 12px;
+  }
+
+  .hero-panel span:last-child {
+    border-bottom: 0;
+  }
+
+  .site-logo {
+    height: 48px;
+  }
+
+  .whatsapp-float {
+    width: 46px;
+    height: 46px;
+    font-size: 24px;
   }
 }
 
@@ -1178,6 +1462,12 @@ input[type="file"]:focus {
     font-size: 1rem;
   }
 
+  .site-name {
+    white-space: normal;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
   .contact-card {
     padding: 22px;
   }
@@ -1191,5 +1481,12 @@ input[type="file"]:focus {
   .whatsapp-float,
   .back-to-top {
     right: 18px;
+  }
+
+  .image-stack::before {
+    left: -10px;
+    bottom: -10px;
+    width: 50%;
+    height: 45%;
   }
 }
