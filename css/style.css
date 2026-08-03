@@ -1221,12 +1221,7 @@ input[type="file"]:focus {
     display: flex;
     flex-direction: column;
     padding-bottom: 0;
-    overflow: visible;
-    background: url("../img/civil-construction.jpg") center center / cover no-repeat #000;
-  }
-
-  .hero-video {
-    display: none;
+    overflow: hidden;
   }
 
   .hero-section > .container {
